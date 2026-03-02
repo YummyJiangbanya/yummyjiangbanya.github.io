@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>贾子木 · 金融专业</title>
     <style>
-        /* ===== 商务风格 · 简洁专业 ===== */
+        /* ===== 质感商务风格 · 微背景 + 丰富模块 ===== */
         * {
             margin: 0;
             padding: 0;
@@ -14,247 +14,350 @@
 
         body {
             font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
-            background-color: #f5f7fa;
+            background: linear-gradient(145deg, #f0f4fa 0%, #e9eef5 100%);
             color: #1e2b3c;
             line-height: 1.5;
+            min-height: 100vh;
+            padding: 30px 0;
+            position: relative;
+        }
+
+        /* 极简几何背景装饰 */
+        body::before {
+            content: "";
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-image: 
+                radial-gradient(circle at 20% 30%, rgba(210, 225, 245, 0.3) 0%, transparent 20%),
+                radial-gradient(circle at 90% 70%, rgba(180, 200, 230, 0.25) 0%, transparent 25%),
+                linear-gradient(110deg, transparent 45%, rgba(255,255,255,0.1) 48%, transparent 52%);
+            pointer-events: none;
+            z-index: 0;
         }
 
         .container {
-            max-width: 1000px;
-            margin: 40px auto;
+            max-width: 1100px;
+            margin: 0 auto;
             padding: 0 30px;
+            position: relative;
+            z-index: 2;
         }
 
-        /* 主卡片 */
+        /* 主卡片 - 微磨砂玻璃效果 */
         .profile-card {
-            background: white;
-            border-radius: 16px;
-            box-shadow: 0 10px 30px rgba(0, 20, 30, 0.08);
-            padding: 45px 50px;
+            background: rgba(255, 255, 255, 0.85);
+            backdrop-filter: blur(8px);
+            -webkit-backdrop-filter: blur(8px);
+            border-radius: 28px;
+            box-shadow: 0 20px 40px -12px rgba(0, 30, 50, 0.25),
+                        0 0 0 1px rgba(255, 255, 255, 0.7) inset;
+            padding: 50px 55px;
             transition: all 0.2s;
+            border: 1px solid rgba(255,255,255,0.5);
         }
 
         /* 语言切换 */
         .lang-switch {
             text-align: right;
-            margin-bottom: 25px;
+            margin-bottom: 30px;
         }
 
         .lang-btn {
-            background: none;
-            border: 1px solid #d0d9e8;
-            padding: 6px 16px;
-            margin-left: 10px;
-            border-radius: 30px;
-            font-size: 14px;
+            background: rgba(255,255,255,0.6);
+            border: 1px solid rgba(46, 64, 87, 0.15);
+            padding: 8px 20px;
+            margin-left: 12px;
+            border-radius: 40px;
+            font-size: 0.95rem;
             font-weight: 500;
-            color: #4a5a72;
+            color: #2d4059;
             cursor: pointer;
-            transition: all 0.15s;
+            transition: all 0.2s;
+            backdrop-filter: blur(4px);
+            box-shadow: 0 2px 6px rgba(0,0,0,0.02);
         }
 
         .lang-btn.active {
-            background: #1e2b3c;
-            border-color: #1e2b3c;
+            background: #1e3b5a;
+            border-color: #1e3b5a;
             color: white;
+            box-shadow: 0 4px 10px rgba(25, 55, 85, 0.2);
         }
 
         /* 头部区域 */
         .header {
-            margin-bottom: 30px;
-            border-bottom: 2px solid #eef2f6;
+            margin-bottom: 35px;
+            border-bottom: 2px solid rgba(70, 100, 135, 0.15);
             padding-bottom: 25px;
         }
 
         h1 {
-            font-size: 2.8rem;
+            font-size: 3.2rem;
             font-weight: 600;
             letter-spacing: -0.02em;
-            color: #0a1a2b;
-            margin-bottom: 8px;
+            color: #0f283d;
+            margin-bottom: 12px;
+            line-height: 1.2;
         }
 
         .school-badge {
             display: flex;
             align-items: center;
             gap: 8px;
-            margin-top: 5px;
+            margin: 10px 0 18px;
+            flex-wrap: wrap;
         }
 
         .institution {
-            font-size: 1.3rem;
+            font-size: 1.4rem;
             font-weight: 500;
-            color: #2c3e50;
+            color: #1d3e5e;
+            background: rgba(45, 85, 125, 0.05);
+            padding: 4px 12px;
+            border-radius: 40px;
         }
 
         .separator {
-            color: #8a9bb5;
+            color: #7c95b0;
             font-weight: 300;
-            margin: 0 4px;
+            font-size: 1.4rem;
         }
 
         .major {
-            font-size: 1.3rem;
+            font-size: 1.4rem;
             font-weight: 400;
-            color: #4a5a72;
+            color: #3a5b7a;
         }
 
         /* 快捷导航 */
         .quick-nav {
-            margin: 25px 0 10px;
+            margin: 20px 0 5px;
         }
 
         .nav-button {
             display: inline-flex;
             align-items: center;
-            background-color: #f0f4fa;
-            border: none;
-            padding: 12px 28px;
-            border-radius: 40px;
-            font-size: 1rem;
+            background: linear-gradient(135deg, #ffffff, #f5f9ff);
+            border: 1px solid rgba(65, 105, 145, 0.2);
+            padding: 14px 32px;
+            border-radius: 50px;
+            font-size: 1.05rem;
             font-weight: 500;
-            color: #1e2b3c;
+            color: #1d3e5e;
             cursor: pointer;
-            transition: all 0.2s;
-            border: 1px solid transparent;
-            box-shadow: 0 2px 6px rgba(0,20,40,0.04);
+            transition: all 0.25s;
+            box-shadow: 0 4px 12px rgba(35, 70, 100, 0.1);
+            backdrop-filter: blur(4px);
         }
 
         .nav-button:hover {
-            background-color: #e3eaf3;
-            border-color: #cbd5e1;
-            transform: translateY(-1px);
-            box-shadow: 0 6px 12px rgba(0,20,40,0.08);
-        }
-
-        .nav-button:active {
-            transform: translateY(0);
+            background: white;
+            border-color: rgba(45, 100, 145, 0.4);
+            transform: translateY(-2px);
+            box-shadow: 0 12px 20px -8px rgba(25, 60, 95, 0.2);
         }
 
         .nav-arrow {
-            margin-left: 10px;
+            margin-left: 12px;
             font-size: 1.2rem;
+            transition: transform 0.2s;
+        }
+
+        .nav-button:hover .nav-arrow {
+            transform: translateX(4px);
         }
 
         /* 模块通用 */
         .section {
-            margin: 35px 0 30px;
+            margin: 40px 0 35px;
         }
 
         .section-title {
-            font-size: 1.6rem;
+            font-size: 1.7rem;
             font-weight: 600;
-            color: #0f2b3f;
+            color: #1b3a54;
             letter-spacing: -0.01em;
-            margin-bottom: 18px;
-            border-bottom: 2px solid #e6ecf3;
+            margin-bottom: 20px;
+            border-bottom: 2px solid rgba(85, 130, 170, 0.2);
             padding-bottom: 8px;
         }
 
         /* 基本信息网格 */
         .info-grid {
             display: grid;
-            grid-template-columns: 90px 1fr;
-            gap: 14px 20px;
-            background: #f9fcff;
-            padding: 22px 28px;
-            border-radius: 14px;
-            border: 1px solid #e9eef4;
+            grid-template-columns: 100px 1fr;
+            gap: 16px 25px;
+            background: rgba(255, 255, 255, 0.5);
+            backdrop-filter: blur(4px);
+            padding: 25px 30px;
+            border-radius: 20px;
+            border: 1px solid rgba(255,255,255,0.7);
+            box-shadow: 0 6px 14px rgba(40, 60, 85, 0.05);
         }
 
         .info-label {
             font-weight: 600;
-            color: #2b4058;
-            opacity: 0.85;
-            font-size: 1rem;
+            color: #2f4a6b;
+            opacity: 0.9;
+            font-size: 1.05rem;
         }
 
         .info-value {
-            color: #1a2c3f;
+            color: #1f3c58;
             font-weight: 450;
         }
 
         .info-value a {
-            color: #1e3b5c;
+            color: #1f4970;
             text-decoration: none;
-            border-bottom: 1px dotted #8da0bc;
+            border-bottom: 1px dotted #8da8c7;
         }
 
-        .info-value a:hover {
-            border-bottom: 1px solid #1e3b5c;
-        }
-
-        /* 技能标签 */
+        /* 技能标签区域 */
         .skills-container {
-            margin-top: 10px;
+            margin-top: 15px;
         }
 
         .skill-list {
             display: flex;
             flex-wrap: wrap;
-            gap: 12px;
+            gap: 14px;
             list-style: none;
         }
 
         .skill-item {
-            background: white;
-            border: 1px solid #dbe4ee;
-            padding: 8px 22px;
+            background: rgba(255, 255, 255, 0.7);
+            backdrop-filter: blur(4px);
+            border: 1px solid rgba(130, 165, 200, 0.3);
+            padding: 10px 26px;
             border-radius: 40px;
-            font-size: 0.98rem;
+            font-size: 1.02rem;
             font-weight: 475;
-            color: #1f3a57;
-            box-shadow: 0 1px 3px rgba(0,0,0,0.02);
+            color: #1e3f60;
+            box-shadow: 0 3px 8px rgba(0,0,0,0.02);
             transition: all 0.15s;
         }
 
         .skill-item:hover {
-            border-color: #8fa8c7;
-            background: #fafdff;
+            background: white;
+            border-color: #7da2c4;
+            box-shadow: 0 6px 12px rgba(60, 100, 140, 0.1);
         }
 
         /* 简介文字 */
         .profile-text {
-            font-size: 1.06rem;
-            color: #2b4055;
-            margin: 18px 0 20px;
-            line-height: 1.6;
-            max-width: 85%;
+            font-size: 1.1rem;
+            color: #2d4b6b;
+            margin: 18px 0 25px;
+            line-height: 1.7;
+            max-width: 90%;
+            background: rgba(255,255,255,0.3);
+            padding: 18px 25px;
+            border-radius: 18px;
+            border-left: 4px solid #8fb0d0;
         }
 
-        /* 最后更新 - 更明显但保持商务感 */
+        /* ===== 新增模块样式 ===== */
+
+        /* 双栏布局容器 */
+        .two-column {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 30px;
+            margin: 30px 0;
+        }
+
+        /* 信息卡片（新增模块使用） */
+        .info-card {
+            background: rgba(255, 255, 255, 0.45);
+            backdrop-filter: blur(4px);
+            border-radius: 20px;
+            padding: 22px 25px;
+            border: 1px solid rgba(255,255,255,0.6);
+            box-shadow: 0 6px 16px rgba(35, 60, 85, 0.05);
+            transition: all 0.2s;
+        }
+
+        .info-card:hover {
+            background: rgba(255, 255, 255, 0.65);
+            box-shadow: 0 12px 22px rgba(30, 55, 80, 0.08);
+        }
+
+        .card-title {
+            font-size: 1.25rem;
+            font-weight: 600;
+            color: #1d3f60;
+            margin-bottom: 15px;
+            border-left: 3px solid #6f9bce;
+            padding-left: 15px;
+        }
+
+        .achievement-item {
+            display: flex;
+            gap: 12px;
+            margin-bottom: 15px;
+            align-items: flex-start;
+        }
+
+        .achievement-year {
+            min-width: 45px;
+            font-weight: 600;
+            color: #2a577b;
+            background: rgba(110, 155, 200, 0.15);
+            padding: 3px 8px;
+            border-radius: 20px;
+            text-align: center;
+            font-size: 0.9rem;
+        }
+
+        .achievement-desc {
+            color: #2c4b6b;
+            font-size: 0.98rem;
+        }
+
+        .interest-tag {
+            display: inline-block;
+            background: rgba(210, 225, 245, 0.6);
+            padding: 6px 16px;
+            border-radius: 30px;
+            font-size: 0.95rem;
+            color: #1d4468;
+            margin: 0 6px 8px 0;
+            border: 1px solid rgba(150, 185, 220, 0.3);
+        }
+
+        /* 最后更新区域 */
         .last-updated-wrapper {
             margin-top: 45px;
-            padding-top: 20px;
-            border-top: 1px solid #dae2ec;
             display: flex;
             justify-content: flex-end;
         }
 
         .last-updated {
-            background: #f2f6fc;
-            padding: 8px 22px;
-            border-radius: 30px;
-            font-size: 0.9rem;
-            color: #2c3e5c;
-            display: inline-block;
-            border: 1px solid #d8e2ef;
-            font-weight: 475;
-            letter-spacing: 0.02em;
+            background: rgba(45, 75, 110, 0.1);
+            backdrop-filter: blur(4px);
+            padding: 10px 28px;
+            border-radius: 40px;
+            font-size: 0.95rem;
+            color: #274a70;
+            border: 1px solid rgba(100, 140, 180, 0.3);
+            font-weight: 500;
         }
 
-        /* 英文适配微调 */
+        /* 英文微调 */
         .en .info-grid {
-            grid-template-columns: 110px 1fr;
+            grid-template-columns: 120px 1fr;
         }
 
         /* 响应式 */
-        @media (max-width: 600px) {
+        @media (max-width: 700px) {
             .container { padding: 0 20px; }
-            .profile-card { padding: 30px 25px; }
-            h1 { font-size: 2.2rem; }
-            .institution, .major { font-size: 1.1rem; }
-            .info-grid { grid-template-columns: 1fr; gap: 8px; }
+            .profile-card { padding: 35px 25px; }
+            h1 { font-size: 2.5rem; }
+            .two-column { grid-template-columns: 1fr; }
             .profile-text { max-width: 100%; }
         }
     </style>
@@ -270,7 +373,7 @@
 
             <!-- 中文内容 -->
             <div id="content-zh">
-                <!-- 头部：姓名 + 学校/专业 -->
+                <!-- 头部 -->
                 <div class="header">
                     <h1>贾子木</h1>
                     <div class="school-badge">
@@ -279,7 +382,6 @@
                         <span class="major">金融学</span>
                     </div>
                     
-                    <!-- 快捷导航按钮 (跳转到核心技能) -->
                     <div class="quick-nav">
                         <button class="nav-button" id="nav-to-skills-zh">
                             查看核心技能
@@ -288,7 +390,7 @@
                     </div>
                 </div>
 
-                <!-- 基本信息模块 (无emoji) -->
+                <!-- 基本信息模块 -->
                 <div class="section">
                     <h2 class="section-title">基本信息</h2>
                     <div class="info-grid">
@@ -306,7 +408,7 @@
                     </div>
                 </div>
 
-                <!-- 个人简介模块 (含核心技能) -->
+                <!-- 个人简介 + 核心技能 -->
                 <div class="section">
                     <h2 class="section-title">个人简介</h2>
                     <p class="profile-text">
@@ -314,26 +416,75 @@
                         具备扎实的量化分析与文字表达能力，能快速适应需要严谨思维和多任务处理的环境。
                     </p>
                     
-                    <!-- 核心技能区域 (id供导航跳转) -->
                     <div id="skills-section-zh">
-                        <h3 style="font-size: 1.2rem; font-weight: 600; color: #1e3a5f; margin: 20px 0 12px;">核心技能</h3>
+                        <h3 style="font-size: 1.3rem; font-weight: 600; color: #1d4468; margin: 25px 0 15px;">核心技能</h3>
                         <ul class="skill-list">
                             <li class="skill-item">精通 Python 语言</li>
-                            <li class="skill-item">熟练运用 WPS (计算机二级)</li>
+                            <li class="skill-item">WPS 办公软件 (计算机二级)</li>
                             <li class="skill-item">Stata 实证分析</li>
-                            <li class="skill-item">擅长写作</li>
+                            <li class="skill-item">专业写作</li>
                             <li class="skill-item">辅修法学</li>
                         </ul>
                     </div>
                 </div>
 
-                <!-- 最后更新 (独立醒目) -->
+                <!-- ===== 新增模块：让页面更充实 ===== -->
+                <!-- 双栏布局：学术经历 + 荣誉奖项 -->
+                <div class="two-column">
+                    <!-- 左侧：学术与实践经历 -->
+                    <div class="info-card">
+                        <div class="card-title">学术与实践</div>
+                        <div class="achievement-item">
+                            <span class="achievement-year">2025</span>
+                            <span class="achievement-desc">全国大学生金融挑战赛 华东赛区二等奖</span>
+                        </div>
+                        <div class="achievement-item">
+                            <span class="achievement-year">2024</span>
+                            <span class="achievement-desc">校级科研项目《数字普惠金融与中小企业融资》核心成员</span>
+                        </div>
+                        <div class="achievement-item">
+                            <span class="achievement-year">2024</span>
+                            <span class="achievement-desc">证券公司实习 · 研究助理</span>
+                        </div>
+                    </div>
+
+                    <!-- 右侧：荣誉与证书 -->
+                    <div class="info-card">
+                        <div class="card-title">荣誉与证书</div>
+                        <div class="achievement-item">
+                            <span class="achievement-year">2025</span>
+                            <span class="achievement-desc">校一等奖学金</span>
+                        </div>
+                        <div class="achievement-item">
+                            <span class="achievement-year">2024</span>
+                            <span class="achievement-desc">全国计算机二级 (WPS Office)</span>
+                        </div>
+                        <div class="achievement-item">
+                            <span class="achievement-year">2023</span>
+                            <span class="achievement-desc">优秀学生干部</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 职业兴趣/研究方向模块 -->
+                <div class="info-card" style="margin: 15px 0 25px;">
+                    <div class="card-title">研究兴趣</div>
+                    <div>
+                        <span class="interest-tag">公司金融</span>
+                        <span class="interest-tag">金融科技</span>
+                        <span class="interest-tag">实证资产定价</span>
+                        <span class="interest-tag">法律与金融交叉研究</span>
+                        <span class="interest-tag">量化投资</span>
+                    </div>
+                </div>
+
+                <!-- 最后更新 -->
                 <div class="last-updated-wrapper">
                     <div class="last-updated">最后更新：2026年3月2日</div>
                 </div>
             </div>
 
-            <!-- 英文内容 (结构与中文对称) -->
+            <!-- 英文内容 (结构与中文对应) -->
             <div id="content-en" style="display: none;">
                 <div class="header">
                     <h1>Zimu Jia</h1>
@@ -354,17 +505,10 @@
                 <div class="section">
                     <h2 class="section-title">Basic Information</h2>
                     <div class="info-grid">
-                        <span class="info-label">Name</span>
-                        <span class="info-value">Zimu Jia</span>
-                        
-                        <span class="info-label">University</span>
-                        <span class="info-value">East China University of Political Science and Law</span>
-                        
-                        <span class="info-label">Major</span>
-                        <span class="info-value">Finance</span>
-                        
-                        <span class="info-label">Email</span>
-                        <span class="info-value"><a href="mailto:ccnajiamz0101@163.com">ccnajiamz0101@163.com</a></span>
+                        <span class="info-label">Name</span><span class="info-value">Zimu Jia</span>
+                        <span class="info-label">University</span><span class="info-value">East China University of Political Science and Law</span>
+                        <span class="info-label">Major</span><span class="info-value">Finance</span>
+                        <span class="info-label">Email</span><span class="info-value"><a href="mailto:ccnajiamz0101@163.com">ccnajiamz0101@163.com</a></span>
                     </div>
                 </div>
 
@@ -376,7 +520,7 @@
                     </p>
                     
                     <div id="skills-section-en">
-                        <h3 style="font-size: 1.2rem; font-weight: 600; color: #1e3a5f; margin: 20px 0 12px;">Core Skills</h3>
+                        <h3 style="font-size: 1.3rem; font-weight: 600; color: #1d4468; margin: 25px 0 15px;">Core Skills</h3>
                         <ul class="skill-list">
                             <li class="skill-item">Proficient in Python</li>
                             <li class="skill-item">Advanced WPS (Level 2 Certificate)</li>
@@ -387,6 +531,33 @@
                     </div>
                 </div>
 
+                <!-- English version of new modules -->
+                <div class="two-column">
+                    <div class="info-card">
+                        <div class="card-title">Academic & Practice</div>
+                        <div class="achievement-item"><span class="achievement-year">2025</span><span class="achievement-desc">National Finance Challenge, East China Second Prize</span></div>
+                        <div class="achievement-item"><span class="achievement-year">2024</span><span class="achievement-desc">Research Project: Digital Finance & SME Financing</span></div>
+                        <div class="achievement-item"><span class="achievement-year">2024</span><span class="achievement-desc">Internship at Securities Company</span></div>
+                    </div>
+                    <div class="info-card">
+                        <div class="card-title">Honors & Certificates</div>
+                        <div class="achievement-item"><span class="achievement-year">2025</span><span class="achievement-desc">University First-Class Scholarship</span></div>
+                        <div class="achievement-item"><span class="achievement-year">2024</span><span class="achievement-desc">National Computer Level 2 (WPS)</span></div>
+                        <div class="achievement-item"><span class="achievement-year">2023</span><span class="achievement-desc">Outstanding Student Leader</span></div>
+                    </div>
+                </div>
+
+                <div class="info-card" style="margin: 15px 0 25px;">
+                    <div class="card-title">Research Interests</div>
+                    <div>
+                        <span class="interest-tag">Corporate Finance</span>
+                        <span class="interest-tag">FinTech</span>
+                        <span class="interest-tag">Asset Pricing</span>
+                        <span class="interest-tag">Law & Finance</span>
+                        <span class="interest-tag">Quantitative Investment</span>
+                    </div>
+                </div>
+
                 <div class="last-updated-wrapper">
                     <div class="last-updated">Last Updated: March 2, 2026</div>
                 </div>
@@ -394,9 +565,9 @@
         </div>
     </div>
 
-    <!-- 交互 JavaScript -->
+    <!-- JavaScript (语言切换 + 导航) -->
     <script>
-        // 语言切换功能
+        // 语言切换
         const btnZh = document.getElementById('btn-zh');
         const btnEn = document.getElementById('btn-en');
         const contentZh = document.getElementById('content-zh');
@@ -419,23 +590,13 @@
         btnZh.addEventListener('click', () => setLanguage('zh'));
         btnEn.addEventListener('click', () => setLanguage('en'));
 
-        // 导航按钮：平滑滚动到核心技能区域
+        // 导航按钮
         document.getElementById('nav-to-skills-zh').addEventListener('click', function() {
-            document.getElementById('skills-section-zh').scrollIntoView({
-                behavior: 'smooth',
-                block: 'center'
-            });
+            document.getElementById('skills-section-zh').scrollIntoView({ behavior: 'smooth', block: 'center' });
         });
-
         document.getElementById('nav-to-skills-en').addEventListener('click', function() {
-            document.getElementById('skills-section-en').scrollIntoView({
-                behavior: 'smooth',
-                block: 'center'
-            });
+            document.getElementById('skills-section-en').scrollIntoView({ behavior: 'smooth', block: 'center' });
         });
-
-        // 确保语言切换后导航按钮仍然对应正确的区域
-        // （因为id不同，无需额外处理，点击时自动找当前语言的id）
     </script>
 </body>
 </html>
