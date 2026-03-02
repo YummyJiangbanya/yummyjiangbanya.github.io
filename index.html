@@ -356,7 +356,7 @@
                 <button class="lang-btn" id="btn-en">English</button>
             </div>
 
-            <!-- 中文内容 -->
+            <!-- ========== 中文内容 ========== -->
             <div id="content-zh">
                 <div class="header">
                     <h1>贾子木</h1>
@@ -405,9 +405,9 @@
                     </div>
                 </div>
 
-                <!-- 双栏：在校经历 + 荣誉与证书 (已按新要求修改) -->
+                <!-- 双栏：在校经历 + 荣誉与证书 -->
                 <div class="two-column">
-                    <!-- 左侧：在校经历 (无年份) -->
+                    <!-- 左侧：在校经历 -->
                     <div class="info-card">
                         <div class="card-title">在校经历</div>
                         <div class="experience-item">
@@ -418,7 +418,7 @@
                         </div>
                     </div>
 
-                    <!-- 右侧：荣誉与证书 (年份已调整) -->
+                    <!-- 右侧：荣誉与证书 -->
                     <div class="info-card">
                         <div class="card-title">荣誉与证书</div>
                         <div class="honor-item">
@@ -450,9 +450,98 @@
                 </div>
             </div>
 
-            <!-- 英文内容 (请保留您原有的英文部分，此处略) -->
+            <!-- ========== 英文内容 (完整版) ========== -->
             <div id="content-en" style="display: none;">
-                <!-- 这里放您之前已有的英文内容，结构对应即可 -->
+                <div class="header">
+                    <h1>Zimu Jia</h1>
+                    <div class="school-badge">
+                        <span class="institution">East China University of Political Science and Law</span>
+                        <span class="separator">·</span>
+                        <span class="major">Finance</span>
+                    </div>
+                    
+                    <div class="quick-nav">
+                        <button class="nav-button" id="nav-to-skills-en">
+                            View Core Skills
+                            <span class="nav-arrow">→</span>
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Basic Information -->
+                <div class="section">
+                    <h2 class="section-title">Basic Information</h2>
+                    <div class="info-grid">
+                        <span class="info-label">Name</span><span class="info-value">Zimu Jia</span>
+                        <span class="info-label">University</span><span class="info-value">East China University of Political Science and Law</span>
+                        <span class="info-label">Major</span><span class="info-value">Finance</span>
+                        <span class="info-label">Email</span><span class="info-value"><a href="mailto:ccnajiamz0101@163.com">ccnajiamz0101@163.com</a></span>
+                    </div>
+                </div>
+
+                <!-- Profile + Core Skills -->
+                <div class="section">
+                    <h2 class="section-title">Profile</h2>
+                    <p class="profile-text">
+                        A detail-oriented finance student with interdisciplinary problem-solving skills. 
+                        Strong in quantitative analysis and writing, adaptable to rigorous and multitasking environments.
+                    </p>
+                    
+                    <div id="skills-section-en">
+                        <h3 style="font-size: 1.3rem; font-weight: 600; color: #3a4e62; margin: 25px 0 15px;">Core Skills</h3>
+                        <ul class="skill-list">
+                            <li class="skill-item">Proficient in Python</li>
+                            <li class="skill-item">WPS Office (Level 2 Certificate)</li>
+                            <li class="skill-item">Stata / Empirical Analysis</li>
+                            <li class="skill-item">Professional Writing</li>
+                            <li class="skill-item">Minor in Law</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Two-column: Campus Experience + Honors -->
+                <div class="two-column">
+                    <!-- Campus Experience -->
+                    <div class="info-card">
+                        <div class="card-title">Campus Experience</div>
+                        <div class="experience-item">
+                            <div class="experience-desc">2025 Summer Practice · Law School Project (University Level)</div>
+                        </div>
+                        <div class="experience-item">
+                            <div class="experience-desc">Internship at Beijing Yingke (Hangzhou) Law Firm</div>
+                        </div>
+                    </div>
+
+                    <!-- Honors & Certificates -->
+                    <div class="info-card">
+                        <div class="card-title">Honors & Certificates</div>
+                        <div class="honor-item">
+                            <span class="honor-year">2025</span>
+                            <span class="honor-desc">National Computer Level 2 (WPS Office)</span>
+                        </div>
+                        <div class="honor-item">
+                            <span class="honor-year">2024</span>
+                            <span class="honor-desc">University Social Activity Scholarship</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Research Interests -->
+                <div class="info-card" style="margin: 15px 0 25px;">
+                    <div class="card-title">Research Interests</div>
+                    <div>
+                        <span class="interest-tag">Corporate Finance</span>
+                        <span class="interest-tag">FinTech</span>
+                        <span class="interest-tag">Empirical Asset Pricing</span>
+                        <span class="interest-tag">Law & Finance</span>
+                        <span class="interest-tag">Quantitative Investment</span>
+                    </div>
+                </div>
+
+                <!-- Last Updated -->
+                <div class="last-updated-wrapper">
+                    <div class="last-updated">Last Updated: March 2, 2026</div>
+                </div>
             </div>
         </div>
     </div>
@@ -481,12 +570,15 @@
         btnZh.addEventListener('click', () => setLanguage('zh'));
         btnEn.addEventListener('click', () => setLanguage('en'));
 
-        // 导航按钮
+        // 中文导航按钮
         document.getElementById('nav-to-skills-zh').addEventListener('click', function() {
             document.getElementById('skills-section-zh').scrollIntoView({ behavior: 'smooth', block: 'center' });
         });
 
-        // 英文导航按钮请自行补充
+        // 英文导航按钮
+        document.getElementById('nav-to-skills-en').addEventListener('click', function() {
+            document.getElementById('skills-section-en').scrollIntoView({ behavior: 'smooth', block: 'center' });
+        });
     </script>
 </body>
 </html>
